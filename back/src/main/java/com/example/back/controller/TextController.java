@@ -1,7 +1,6 @@
 package com.example.back.controller;
 
 import com.example.back.dto.GenerationDto;
-import com.example.back.response.Response;
 import com.example.back.service.HttpReqService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
