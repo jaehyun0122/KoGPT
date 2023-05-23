@@ -32,12 +32,14 @@ public class HttpReqService {
     // Http 요청
     public String HttpReq(Map<String, String> request) throws Exception {
         HttpClient httpClient = HttpClient.newHttpClient();
+        String prompt = request.get("prompt");
+        float temperature = Float.parseFloat(request.get("temperature")) * 0.01f;
 
         RequestDto requestDto = RequestDto.builder()
-                .prompt(request.get("text"))
-                .tokens(128)
-                .temperature(0.7f)
-                .n(2)
+                .prompt(prompt)
+                .tokens(500)
+                .temperature(temperature)
+                .n(1)
                 .build();
 
         ObjectMapper objectMapper = new ObjectMapper();

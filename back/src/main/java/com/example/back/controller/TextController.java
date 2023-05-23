@@ -21,12 +21,10 @@ public class TextController {
     private final HttpReqService httpReqService;
 
     @PostMapping()
-    public ResponseEntity<Response> getText(@RequestBody Map<String, String> request) throws Exception {
+    public ResponseEntity<List<GenerationDto>> getText(@RequestBody Map<String, String> request) throws Exception {
         String response = httpReqService.HttpReq(request);
         List<GenerationDto> responseList = httpReqService.getResponse(response);
 
-        responseList.stream().map(data->data.getText()).forEach(System.out::println);
-
-        return new ResponseEntity<>(new Response(), HttpStatus.OK);
+        return new ResponseEntity<>(responseList, HttpStatus.OK);
     }
 }
