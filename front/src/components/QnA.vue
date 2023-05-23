@@ -9,7 +9,7 @@
     </v-col>
     <v-col>
       <div class="text-caption">
-        문장 창의성. 높을 수록 창의적.
+        문장 간결성. 높을 수록 간결함.
       </div>
       <v-slider
           v-model="slider2"
